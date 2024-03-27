@@ -1,0 +1,699 @@
+2024-03-23 18:42:12 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: weibohots)
+2024-03-23 18:42:12 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.12, cssselect 1.2.0, parsel 1.7.0, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.4 (tags/v3.10.4:9d38120, Mar 23 2022, 23:13:41) [MSC v.1929 64 bit (AMD64)], pyOpenSSL 23.0.0 (OpenSSL 3.0.8 7 Feb 2023), cryptography 39.0.2, Platform Windows-10-10.0.22621-SP0
+2024-03-23 18:42:12 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'weibohots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'wbsh.log',
+ 'NEWSPIDER_MODULE': 'weibohots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['weibohots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-03-23 18:42:12 [asyncio] DEBUG: Using selector: SelectSelector
+2024-03-23 18:42:12 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-03-23 18:42:12 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.windows_events._WindowsSelectorEventLoop
+2024-03-23 18:42:12 [scrapy.extensions.telnet] INFO: Telnet Password: 0084345b91a31c26
+2024-03-23 18:42:12 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-03-23 18:42:12 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-03-23 18:42:12 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-03-23 18:42:12 [scrapy.middleware] INFO: Enabled item pipelines:
+['weibohots.pipelines.WeibohotsPipeline']
+2024-03-23 18:42:12 [scrapy.core.engine] INFO: Spider opened
+2024-03-23 18:42:12 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-03-23 18:42:12 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-03-23 18:42:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+2024-03-23 18:42:13 [scrapy.core.scraper] ERROR: Spider error processing <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+Traceback (most recent call last):
+  File "D:\env\python\lib\site-packages\scrapy\utils\defer.py", line 257, in iter_errback
+    yield next(it)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 28, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 353, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\temporary_files\alter_project\weibohots\weibohots\spiders\weibohotsearch.py", line 18, in parse
+    obj = json.loads(data)
+  File "D:\env\python\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "D:\env\python\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\env\python\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 698 (char 697)
+2024-03-23 18:42:13 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-03-23 18:42:13 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 228,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 5726,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.312877,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 3, 23, 10, 42, 13, 183510),
+ 'httpcompression/response_bytes': 29421,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/JSONDecodeError': 1,
+ 'start_time': datetime.datetime(2024, 3, 23, 10, 42, 12, 870633)}
+2024-03-23 18:42:13 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-03-23 18:42:23 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: weibohots)
+2024-03-23 18:42:23 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.12, cssselect 1.2.0, parsel 1.7.0, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.4 (tags/v3.10.4:9d38120, Mar 23 2022, 23:13:41) [MSC v.1929 64 bit (AMD64)], pyOpenSSL 23.0.0 (OpenSSL 3.0.8 7 Feb 2023), cryptography 39.0.2, Platform Windows-10-10.0.22621-SP0
+2024-03-23 18:42:23 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'weibohots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'wbsh.log',
+ 'NEWSPIDER_MODULE': 'weibohots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['weibohots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-03-23 18:42:23 [asyncio] DEBUG: Using selector: SelectSelector
+2024-03-23 18:42:23 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-03-23 18:42:23 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.windows_events._WindowsSelectorEventLoop
+2024-03-23 18:42:23 [scrapy.extensions.telnet] INFO: Telnet Password: 4044f1e5821fb00a
+2024-03-23 18:42:23 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-03-23 18:42:23 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-03-23 18:42:23 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-03-23 18:42:23 [scrapy.middleware] INFO: Enabled item pipelines:
+['weibohots.pipelines.WeibohotsPipeline']
+2024-03-23 18:42:23 [scrapy.core.engine] INFO: Spider opened
+2024-03-23 18:42:23 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-03-23 18:42:23 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-03-23 18:42:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+2024-03-23 18:42:23 [scrapy.core.scraper] ERROR: Spider error processing <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+Traceback (most recent call last):
+  File "D:\env\python\lib\site-packages\scrapy\utils\defer.py", line 257, in iter_errback
+    yield next(it)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 28, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 353, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\temporary_files\alter_project\weibohots\weibohots\spiders\weibohotsearch.py", line 18, in parse
+    obj = json.loads(data)
+  File "D:\env\python\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "D:\env\python\lib\json\decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 1 column 23166 (char 23165)
+2024-03-23 18:42:23 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-03-23 18:42:23 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 228,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 5106,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.254486,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 3, 23, 10, 42, 23, 749689),
+ 'httpcompression/response_bytes': 27575,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/JSONDecodeError': 1,
+ 'start_time': datetime.datetime(2024, 3, 23, 10, 42, 23, 495203)}
+2024-03-23 18:42:23 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-03-23 18:43:11 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: weibohots)
+2024-03-23 18:43:11 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.12, cssselect 1.2.0, parsel 1.7.0, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.4 (tags/v3.10.4:9d38120, Mar 23 2022, 23:13:41) [MSC v.1929 64 bit (AMD64)], pyOpenSSL 23.0.0 (OpenSSL 3.0.8 7 Feb 2023), cryptography 39.0.2, Platform Windows-10-10.0.22621-SP0
+2024-03-23 18:43:11 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'weibohots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'wbsh.log',
+ 'NEWSPIDER_MODULE': 'weibohots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['weibohots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-03-23 18:43:11 [asyncio] DEBUG: Using selector: SelectSelector
+2024-03-23 18:43:11 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-03-23 18:43:11 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.windows_events._WindowsSelectorEventLoop
+2024-03-23 18:43:11 [scrapy.extensions.telnet] INFO: Telnet Password: abea963059eeff86
+2024-03-23 18:43:11 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-03-23 18:43:11 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-03-23 18:43:11 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-03-23 18:43:11 [scrapy.middleware] INFO: Enabled item pipelines:
+['weibohots.pipelines.WeibohotsPipeline']
+2024-03-23 18:43:11 [scrapy.core.engine] INFO: Spider opened
+2024-03-23 18:43:12 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-03-23 18:43:12 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-03-23 18:43:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+2024-03-23 18:43:12 [scrapy.core.scraper] ERROR: Spider error processing <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+Traceback (most recent call last):
+  File "D:\env\python\lib\site-packages\scrapy\utils\defer.py", line 257, in iter_errback
+    yield next(it)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 28, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 353, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\temporary_files\alter_project\weibohots\weibohots\spiders\weibohotsearch.py", line 18, in parse
+    obj = json.loads(data)
+  File "D:\env\python\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "D:\env\python\lib\json\decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 1 column 24853 (char 24852)
+2024-03-23 18:43:12 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-03-23 18:43:12 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 228,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 5764,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.270063,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 3, 23, 10, 43, 12, 442738),
+ 'httpcompression/response_bytes': 29408,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/JSONDecodeError': 1,
+ 'start_time': datetime.datetime(2024, 3, 23, 10, 43, 12, 172675)}
+2024-03-23 18:43:12 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-03-23 18:45:04 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: weibohots)
+2024-03-23 18:45:04 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.12, cssselect 1.2.0, parsel 1.7.0, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.4 (tags/v3.10.4:9d38120, Mar 23 2022, 23:13:41) [MSC v.1929 64 bit (AMD64)], pyOpenSSL 23.0.0 (OpenSSL 3.0.8 7 Feb 2023), cryptography 39.0.2, Platform Windows-10-10.0.22621-SP0
+2024-03-23 18:45:04 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'weibohots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'wbsh.log',
+ 'NEWSPIDER_MODULE': 'weibohots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['weibohots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-03-23 18:45:04 [asyncio] DEBUG: Using selector: SelectSelector
+2024-03-23 18:45:04 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-03-23 18:45:04 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.windows_events._WindowsSelectorEventLoop
+2024-03-23 18:45:05 [scrapy.extensions.telnet] INFO: Telnet Password: b06ae953e948f41e
+2024-03-23 18:45:05 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-03-23 18:45:05 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-03-23 18:45:05 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-03-23 18:45:05 [scrapy.middleware] INFO: Enabled item pipelines:
+['weibohots.pipelines.WeibohotsPipeline']
+2024-03-23 18:45:05 [scrapy.core.engine] INFO: Spider opened
+2024-03-23 18:45:05 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-03-23 18:45:05 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-03-23 18:45:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+2024-03-23 18:45:05 [scrapy.core.scraper] ERROR: Spider error processing <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+Traceback (most recent call last):
+  File "D:\env\python\lib\site-packages\scrapy\utils\defer.py", line 257, in iter_errback
+    yield next(it)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 28, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 353, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\temporary_files\alter_project\weibohots\weibohots\spiders\weibohotsearch.py", line 18, in parse
+    obj = json.loads(data)
+  File "D:\env\python\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "D:\env\python\lib\json\decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 1 column 23276 (char 23275)
+2024-03-23 18:45:05 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-03-23 18:45:05 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 228,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 5241,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.335265,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 3, 23, 10, 45, 5, 703823),
+ 'httpcompression/response_bytes': 27705,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/JSONDecodeError': 1,
+ 'start_time': datetime.datetime(2024, 3, 23, 10, 45, 5, 368558)}
+2024-03-23 18:45:05 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-03-23 18:45:51 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: weibohots)
+2024-03-23 18:45:51 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.12, cssselect 1.2.0, parsel 1.7.0, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.4 (tags/v3.10.4:9d38120, Mar 23 2022, 23:13:41) [MSC v.1929 64 bit (AMD64)], pyOpenSSL 23.0.0 (OpenSSL 3.0.8 7 Feb 2023), cryptography 39.0.2, Platform Windows-10-10.0.22621-SP0
+2024-03-23 18:45:51 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'weibohots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'wbsh.log',
+ 'NEWSPIDER_MODULE': 'weibohots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['weibohots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-03-23 18:45:51 [asyncio] DEBUG: Using selector: SelectSelector
+2024-03-23 18:45:51 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-03-23 18:45:51 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.windows_events._WindowsSelectorEventLoop
+2024-03-23 18:45:51 [scrapy.extensions.telnet] INFO: Telnet Password: 3baf502302e245bb
+2024-03-23 18:45:51 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-03-23 18:45:51 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-03-23 18:45:51 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-03-23 18:45:51 [scrapy.middleware] INFO: Enabled item pipelines:
+['weibohots.pipelines.WeibohotsPipeline']
+2024-03-23 18:45:51 [scrapy.core.engine] INFO: Spider opened
+2024-03-23 18:45:51 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-03-23 18:45:51 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-03-23 18:45:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+2024-03-23 18:45:51 [scrapy.core.scraper] ERROR: Spider error processing <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+Traceback (most recent call last):
+  File "D:\env\python\lib\site-packages\scrapy\utils\defer.py", line 257, in iter_errback
+    yield next(it)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 28, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 353, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\temporary_files\alter_project\weibohots\weibohots\spiders\weibohotsearch.py", line 18, in parse
+    obj = json.loads(data)
+  File "D:\env\python\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "D:\env\python\lib\json\decoder.py", line 340, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 1 column 23180 (char 23179)
+2024-03-23 18:45:51 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-03-23 18:45:51 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 228,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 5223,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.265396,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 3, 23, 10, 45, 51, 994358),
+ 'httpcompression/response_bytes': 27603,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/JSONDecodeError': 1,
+ 'start_time': datetime.datetime(2024, 3, 23, 10, 45, 51, 728962)}
+2024-03-23 18:45:51 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-03-23 18:47:08 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: weibohots)
+2024-03-23 18:47:08 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.12, cssselect 1.2.0, parsel 1.7.0, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.4 (tags/v3.10.4:9d38120, Mar 23 2022, 23:13:41) [MSC v.1929 64 bit (AMD64)], pyOpenSSL 23.0.0 (OpenSSL 3.0.8 7 Feb 2023), cryptography 39.0.2, Platform Windows-10-10.0.22621-SP0
+2024-03-23 18:47:08 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'weibohots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'wbsh.log',
+ 'NEWSPIDER_MODULE': 'weibohots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['weibohots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-03-23 18:47:08 [asyncio] DEBUG: Using selector: SelectSelector
+2024-03-23 18:47:08 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-03-23 18:47:08 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.windows_events._WindowsSelectorEventLoop
+2024-03-23 18:47:08 [scrapy.extensions.telnet] INFO: Telnet Password: 8216c33aa736aa6c
+2024-03-23 18:47:08 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-03-23 18:47:08 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-03-23 18:47:08 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-03-23 18:47:08 [scrapy.middleware] INFO: Enabled item pipelines:
+['weibohots.pipelines.WeibohotsPipeline']
+2024-03-23 18:47:08 [scrapy.core.engine] INFO: Spider opened
+2024-03-23 18:47:08 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-03-23 18:47:08 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-03-23 18:47:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+2024-03-23 18:47:09 [scrapy.core.scraper] ERROR: Spider error processing <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+Traceback (most recent call last):
+  File "D:\env\python\lib\site-packages\scrapy\utils\defer.py", line 257, in iter_errback
+    yield next(it)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 28, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 353, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\temporary_files\alter_project\weibohots\weibohots\spiders\weibohotsearch.py", line 18, in parse
+    obj = json.loads(data)
+  File "D:\env\python\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "D:\env\python\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\env\python\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 662 (char 661)
+2024-03-23 18:47:09 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-03-23 18:47:09 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 228,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 5838,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.262969,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 3, 23, 10, 47, 9, 100568),
+ 'httpcompression/response_bytes': 29396,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/JSONDecodeError': 1,
+ 'start_time': datetime.datetime(2024, 3, 23, 10, 47, 8, 837599)}
+2024-03-23 18:47:09 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-03-23 18:47:18 [scrapy.utils.log] INFO: Scrapy 2.8.0 started (bot: weibohots)
+2024-03-23 18:47:18 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.12, cssselect 1.2.0, parsel 1.7.0, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.4 (tags/v3.10.4:9d38120, Mar 23 2022, 23:13:41) [MSC v.1929 64 bit (AMD64)], pyOpenSSL 23.0.0 (OpenSSL 3.0.8 7 Feb 2023), cryptography 39.0.2, Platform Windows-10-10.0.22621-SP0
+2024-03-23 18:47:18 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'weibohots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'wbsh.log',
+ 'NEWSPIDER_MODULE': 'weibohots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['weibohots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-03-23 18:47:19 [asyncio] DEBUG: Using selector: SelectSelector
+2024-03-23 18:47:19 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-03-23 18:47:19 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.windows_events._WindowsSelectorEventLoop
+2024-03-23 18:47:19 [scrapy.extensions.telnet] INFO: Telnet Password: 4f658a45cf64cfc4
+2024-03-23 18:47:19 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-03-23 18:47:19 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-03-23 18:47:19 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-03-23 18:47:19 [scrapy.middleware] INFO: Enabled item pipelines:
+['weibohots.pipelines.WeibohotsPipeline']
+2024-03-23 18:47:19 [scrapy.core.engine] INFO: Spider opened
+2024-03-23 18:47:19 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-03-23 18:47:19 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-03-23 18:47:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+2024-03-23 18:47:19 [scrapy.core.scraper] ERROR: Spider error processing <GET https://weibo.com/ajax/side/hotSearch> (referer: None)
+Traceback (most recent call last):
+  File "D:\env\python\lib\site-packages\scrapy\utils\defer.py", line 257, in iter_errback
+    yield next(it)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\utils\python.py", line 312, in __next__
+    return next(self.data)
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\offsite.py", line 28, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 353, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\env\python\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+  File "D:\env\python\lib\site-packages\scrapy\core\spidermw.py", line 104, in process_sync
+    for r in iterable:
+  File "D:\temporary_files\alter_project\weibohots\weibohots\spiders\weibohotsearch.py", line 18, in parse
+    obj = json.loads(data)
+  File "D:\env\python\lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "D:\env\python\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\env\python\lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting ',' delimiter: line 1 column 662 (char 661)
+2024-03-23 18:47:19 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-03-23 18:47:19 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 228,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 5739,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.267974,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 3, 23, 10, 47, 19, 634102),
+ 'httpcompression/response_bytes': 29426,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/JSONDecodeError': 1,
+ 'start_time': datetime.datetime(2024, 3, 23, 10, 47, 19, 366128)}
+2024-03-23 18:47:19 [scrapy.core.engine] INFO: Spider closed (finished)
